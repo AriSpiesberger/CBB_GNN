@@ -29,9 +29,10 @@ else:
 # --- End imports ---
 
 # --- 1. Configuration ---
-SCRIPT_DIR = r"C:\Users\arisp\Documents\Research\College_BBALL\data"
+# Use a relative data directory or allow override via environment variable
+SCRIPT_DIR = os.environ.get('DATA_DIR', os.path.join(os.getcwd(), 'data'))
 # This is now just a reference, as all data will be split
-SEASON_YEAR = 2024 
+SEASON_YEAR = 2024
 GNN_PCA_PLOT_PATH = os.path.join(SCRIPT_DIR, "mbb_gnn_pca_cluster_plot_ALL_SEASONS_INTERACTIVE.html")
 
 def main():
